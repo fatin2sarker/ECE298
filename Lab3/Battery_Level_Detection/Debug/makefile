@@ -55,8 +55,8 @@ all: main-build
 main-build: Battery_Level_Detection.elf secondary-outputs
 
 # Tool invocations
-Battery_Level_Detection.elf: $(OBJS) $(USER_OBJS) N:\ECE\ 298\Lab\ 3\STM32_Workspace\Battery_Level_Detection\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Battery_Level_Detection.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"N:\ECE 298\Lab 3\STM32_Workspace\Battery_Level_Detection\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Battery_Level_Detection.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Battery_Level_Detection.elf: $(OBJS) $(USER_OBJS) N:\ECE-298\Lab3\STM32_Workspace\Battery_Level_Detection\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Battery_Level_Detection.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"N:\ECE-298\Lab3\STM32_Workspace\Battery_Level_Detection\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Battery_Level_Detection.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
