@@ -104,7 +104,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 	 //run-lock mode
-	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET )
+	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET )  //set to 1
 	{
 		//Run mode - switch PA0(input) - PA6(Green LED)
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET); //GREEN ON
