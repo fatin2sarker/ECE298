@@ -173,6 +173,9 @@ int main(void)
 	  			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET); //GREEN ON
 	  			HAL_UART_Transmit(&huart6, buff, sizeof(buff), 1000);
 	  			HAL_Delay(500);
+	  			//HAL_UART_Transmit(&huart6, LCD_instcode, 1, 1000);
+	  			//HAL_UART_Transmit(&huart6, LCD_CLR, 1, 1000);
+	  			//HAL_Delay(500);
 	  		}
 	  		else
 	  		{
