@@ -76,6 +76,9 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	int32_t CH1_DC = 0;
+	uint8_t buff[]="Run\r\n";
+	//uint8_t LCD_instcode =0xFE;
+	//uint8_t LCD_CLR = 1;   //clear screen
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -168,6 +171,8 @@ int main(void)
 	  		{
 	  			//Run mode - switch PA0(input) - PA6(Green LED)
 	  			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET); //GREEN ON
+	  			HAL_UART_Transmit(&huart6, buff, sizeof(buff), 1000);
+	  			HAL_Delay(500);
 	  		}
 	  		else
 	  		{
@@ -176,7 +181,7 @@ int main(void)
 	  		}
 
 
-	 ///PWN with timer to the LCD
+	 ///PWN with timer
 	  	 	while(CH1_DC < 65535)
 	  	  	{
 	  	  	    TIM2->CCR1 = CH1_DC;
